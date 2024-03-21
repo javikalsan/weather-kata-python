@@ -25,11 +25,16 @@ kata-coverage:
 	.venv/bin/coverage html
 	@printf "To visualize the lines open the report at htmlcov/index.html\n"
 
+.PHONY: kata-mutation
+kata-mutation:
+	.venv/bin/mutmut run --paths-to-mutate=weather --tests-dir=tests; exit 0
+
 define HELP
     - make kata-deps\t\tInstall kata dependencies
     - make kata-tests\t\tExecute tests
     - make kata-watch-tests\tExecute tests when changes
     - make kata-coverage\tGenerate test coverage report
+    - make kata-mutation\tRun mutmut
 
 Please execute "make <command>". Example: make kata-tests
 

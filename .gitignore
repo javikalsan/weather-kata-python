@@ -1,6 +1,7 @@
 htmlcov
 .coverage
 .venv
+.mutmut-cache
 
 __pycache__
 
