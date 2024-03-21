@@ -28,6 +28,7 @@ kata-coverage:
 .PHONY: kata-mutation
 kata-mutation:
 	.venv/bin/mutmut run --paths-to-mutate=weather --tests-dir=tests; exit 0
+	@printf "\nℹ To visualize mutations run: mutmut show <id> ℹ\n"
 
 define HELP
     - make kata-deps\t\tInstall kata dependencies
